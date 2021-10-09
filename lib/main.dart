@@ -34,30 +34,31 @@ class MyHomePage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Flutter Demo Home Page'),
       ),
-      body: const Box(
-        as: As.column,
+      body: Box(
         styleSheet: StyleSheet(
-          padding: 0,
-          margin: 0,
-          backgroundColor: Colors.yellow,
+          backgroundColor: Colors.grey.shade200,
           alignItems: AlignItems.start,
         ),
-        children: [
+        children: const [
           Box(
-            child: Text('1'),
-            styleSheet:
-                StyleSheet(backgroundColor: Colors.red, width: 50, height: 50),
-          ),
-          Box(
-            child: Text('2'),
-            styleSheet:
-                StyleSheet(backgroundColor: Colors.blue, width: 50, height: 50),
-          ),
-          Box(
-            child: Text('3'),
-            styleSheet: StyleSheet(
-                backgroundColor: Colors.green, width: 50, height: 50),
-          ),
+            as: As.column,
+            children: [
+              Box(
+                child: Text('Topoaa'),
+                styleSheet: StyleSheet(
+                  // backgroundColor: Colors.red,
+                  // backgroundColor: {
+                  //   xs: Colors.black,
+                  //   md: Colors.blue,
+                  // },
+                  backgroundColor: Colors.red,
+                  color: Colors.white,
+                ),
+              ),
+              Box(child: Text('Meio')),
+              Box(child: Text('Footer')),
+            ],
+          )
         ],
       ),
     );

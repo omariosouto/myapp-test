@@ -39,7 +39,8 @@ class Box extends StatelessWidget {
     if (as == As.row) {
       return Row(
         mainAxisAlignment:
-            aligmItemsMapBy[styleSheet.alignItems] as MainAxisAlignment,
+            aligmItemsMapBy[styleSheet.alignItems ?? MainAxisAlignment.start]
+                as MainAxisAlignment,
         children: children,
       );
     }
@@ -47,7 +48,8 @@ class Box extends StatelessWidget {
     if (as == As.column) {
       return Column(
         mainAxisAlignment:
-            aligmItemsMapBy[styleSheet.alignItems] as MainAxisAlignment,
+            aligmItemsMapBy[styleSheet.alignItems ?? MainAxisAlignment.start]
+                as MainAxisAlignment,
         children: children,
       );
     }
@@ -96,7 +98,7 @@ class Box extends StatelessWidget {
     );
   }
 
-  Widget withCenter(Function core, bool center) {
+  withCenter(Function core, bool center) {
     if (center) {
       return Center(
         child: core(),

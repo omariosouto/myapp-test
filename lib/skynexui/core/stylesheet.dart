@@ -1,5 +1,13 @@
 import 'package:flutter/material.dart';
 
+// type ResponsiveProperty<T> = Partial<Record<BreakpointsNames, T>>;
+// export type PropertyDefinition<T> = T | ResponsiveProperty<T>;
+
+// const width : PropertyDefinition<string> = '2px';
+// const width : PropertyDefinition<string> = {
+//   lg: '2px'
+// };
+
 enum AlignItems {
   start,
   end,
@@ -33,7 +41,7 @@ class StyleSheet {
   final double paddingBottom;
   // ===============
   // Flex Properties
-  final AlignItems? alignItems;
+  final AlignItems alignItems;
   // ===============
   // Flutter Specific
   final bool center;
@@ -42,7 +50,7 @@ class StyleSheet {
   const StyleSheet({
     this.width,
     this.height,
-    this.alignItems,
+    this.alignItems = AlignItems.start,
     this.backgroundColor = Colors.transparent,
     this.color = Colors.black,
     this.margin = 0,
